@@ -8,7 +8,7 @@ CashMachine for supermarket software 💰
 ## How to test it
 
 * Clone the repository
-* Run `tests.py
+* Run `tests.py`
 
 ## How to use it
 
