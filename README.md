@@ -21,5 +21,5 @@ machine.pay([2, 1], 2.5) // Pieces the customer gave, price of the product
 
 ## To do
 
-* Add bills management
 * Add products management
+* Add tkinter
