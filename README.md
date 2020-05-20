@@ -22,6 +22,7 @@ machine.pay([2, 1], 2.5) // Pieces the customer gave, price of the product
 // Will return (0, [0.5])  
 //  O is the money you still have to give if you does not have enough money in your machine
 //  [0.5] is/are the piece(s) you have to give back
+```
 
 ## To do
 
