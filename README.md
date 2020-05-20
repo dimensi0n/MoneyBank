@@ -1,5 +1,8 @@
 # MoneyBank
 
+![Tests](https://github.com/dimensi0n/MoneyBank/workflows/Python%20application/badge.svg)
+![Python version](https://img.shields.io/badge/Python%20version-3.8-yellow)
+
 CashMachine for supermarket software 💰
 
 ## How to test it
