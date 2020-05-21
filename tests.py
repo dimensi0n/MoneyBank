@@ -1,5 +1,7 @@
 import unittest
 import src.main as bank
+from os import remove
+
 class TestBank(unittest.TestCase):
     def testPayThree(self):
         moneyBank = bank.MoneyBank([1], [])
@@ -16,6 +18,10 @@ class TestBank(unittest.TestCase):
     def testIsExactlyWhatYouHaveToGive(self):
         moneyBank = bank.MoneyBank([], [])
         self.assertEqual(moneyBank.pay([], [10], 10), (0))
-
+    def testTheGainOfToday(self):
+        moneyBank = bank.MoneyBank([], [])
+        self.assertEqual(moneyBank.getGainOfToday(), (66.0,))
 if __name__ == '__main__':
-    unittest.main()
+    remove('database.db')
+    unittest.main() 
+   

@@ -1,3 +1,6 @@
+from src.models.payment import Payment as payment
+import sqlite3
+
 class MoneyBank:
 
     """ 
@@ -7,6 +10,7 @@ class MoneyBank:
     def __init__(self, pieces = [], bills = []):
         self.available_pieces = pieces
         self.available_bills = bills
+        self.database = sqlite3.connect('database.db')
 
     """
     Return how much money you have to give back
@@ -41,6 +45,8 @@ class MoneyBank:
     It returns an array, the first value is the returned pieces, the second is the difference if there is no combination to get exact returned value
     """
     def pay(self, given_pieces = [], given_bills = [], price = 0):
+        Payment = payment(price, self.database)
+        Payment.create()
         sumOfGivenMoney = sum(given_pieces) + sum(given_bills)
         if sumOfGivenMoney == price:
             self.available_pieces = self.available_pieces + given_pieces
@@ -56,4 +62,11 @@ class MoneyBank:
         else:
             # Return -1 if the customer did not give enough money to buy the object
             return -1
-
+    
+    """
+    Get the gain of today
+    It returns an array of sql entries
+    """
+    def getGainOfToday(self):
+        Payment = payment(database=self.database)
+        return Payment.getGainOfToday()
